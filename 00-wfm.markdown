@@ -4,9 +4,9 @@ title: Планирование
 permalink: /wfm/
 ---
 
-<h2>TBD</h2>
+<h2>Расписание</h2>
 
 | - | - |
 |---|---|
-| ![TBD](/assets/demo400.png "TBD") | TBD |
-| TBD| ![TBD](/assets/demo400.png) |
+| ![Смены](/assets/opt_emp.png "Смены") | Планирование ресурсов |
+| Метрики и покрытие| ![Смены](/assets/opt_shifts.png) |
