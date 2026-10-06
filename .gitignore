@@ -1,5 +1,17 @@
-_site
-.sass-cache
-.jekyll-cache
+# Site
+_site/
+.jekyll-cache/
 .jekyll-metadata
-vendor
+.sass-cache/
+
+# Ruby
+.bundle/
+vendor/
+.ruby-lsp/
+Gemfile.lock.local
+
+# Tooling artefacts
+node_modules/
+.playwright-mcp/
+*.log
+.DS_Store

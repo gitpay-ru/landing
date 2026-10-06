@@ -1,0 +1,203 @@
+---
+layout: default
+---
+
+{%- comment -%}
+  The translation table must be assigned here as well: Jekyll renders this
+  layout *before* `default.html`, so variables set there are not visible yet.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign agents = site.data.agents -%}
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+    <div class="hero__grid"></div>
+  </div>
+
+  <div class="container hero__inner">
+    <div class="hero__content" data-reveal>
+      <p class="eyebrow">
+        <span class="eyebrow__dot" aria-hidden="true"></span>
+        {{ t.hero.eyebrow }}
+      </p>
+      <h1 class="hero__title">
+        {{ t.hero.title_1 }}<br>
+        <span class="grad">{{ t.hero.title_2 }}</span>
+      </h1>
+      <p class="hero__subtitle">{{ t.hero.subtitle }}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contact">{{ t.hero.primary }}</a>
+        <a class="btn btn--ghost" href="#agents">{{ t.hero.secondary }}</a>
+      </div>
+      <p class="hero__hint">{{ t.hero.hint }}</p>
+    </div>
+
+    <ul class="hero__cards">
+      {%- for card in t.hero_cards %}
+        <li class="card card--sm glass" data-reveal style="--delay: {{ forloop.index0 | times: 90 }}ms">
+          <h2 class="card__title">{{ card.title }}</h2>
+          <p class="card__text">{{ card.text }}</p>
+        </li>
+      {%- endfor %}
+    </ul>
+  </div>
+
+  <div class="hero__stats container">
+    <dl class="stats" data-reveal>
+      {%- for stat in t.stats %}
+        <div class="stats__item">
+          <dt class="stats__value">{{ stat.value }}</dt>
+          <dd class="stats__label">{{ stat.label }}</dd>
+        </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+<!-- ========================= PROBLEMS =========================== -->
+<section class="section section--problems">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">{{ t.problems.eyebrow }}</p>
+      <h2 class="section__title">{{ t.problems.title }}</h2>
+      <p class="section__subtitle">{{ t.problems.subtitle }}</p>
+    </header>
+
+    <ul class="grid grid--3 problems">
+      {%- for item in t.problems.items %}
+        <li class="card glass" data-reveal style="--delay: {{ forloop.index0 | times: 60 }}ms">
+          <span class="card__icon" aria-hidden="true">
+            {% include icon.html name=item.icon %}
+          </span>
+          <h3 class="card__title">{{ item.title }}</h3>
+          <p class="card__text">{{ item.text }}</p>
+        </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ========================== AGENTS ============================ -->
+<section class="section section--agents" id="agents">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">{{ t.agents.eyebrow }}</p>
+      <h2 class="section__title">{{ t.agents.title }}</h2>
+      <p class="section__subtitle">{{ t.agents.subtitle }}</p>
+    </header>
+
+    <ul class="grid grid--2 agents">
+      {%- for agent in agents %}
+        {%- assign a = agent[lang] %}
+        <li class="card card--agent glass" data-reveal style="--delay: {{ forloop.index0 | times: 70 }}ms">
+          <div class="card__head">
+            <span class="card__icon card__icon--lg" aria-hidden="true">
+              {% include icon.html name=agent.icon %}
+            </span>
+            <div>
+              <h3 class="card__title card__title--lg">{{ a.name }}</h3>
+              <p class="card__tagline">{{ a.tagline }}</p>
+            </div>
+          </div>
+
+          <p class="card__text">{{ a.text }}</p>
+
+          <ul class="chips">
+            {%- for cap in a.capabilities %}
+              <li class="chip">{{ cap }}</li>
+            {%- endfor %}
+          </ul>
+
+          <div class="agent__meta">
+            <p class="agent__row">
+              <span class="agent__label">{{ t.agents.stack_label }}</span>
+              <span class="agent__value">{% for item in a.stack %}{{ item }}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
+            </p>
+            <p class="agent__row">
+              <span class="agent__label">{{ t.agents.integrations_label }}</span>
+              <span class="agent__value">{% for item in a.integrations %}{{ item }}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>
+            </p>
+            <p class="agent__outcome">
+              <span class="agent__label">{{ t.agents.outcome_label }}</span>
+              {{ a.outcome }}
+            </p>
+          </div>
+        </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ========================= APPROACH =========================== -->
+<section class="section section--approach" id="approach">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">{{ t.approach.eyebrow }}</p>
+      <h2 class="section__title">{{ t.approach.title }}</h2>
+      <p class="section__subtitle">{{ t.approach.subtitle }}</p>
+    </header>
+
+    <ol class="steps">
+      {%- for step in t.approach.steps %}
+        <li class="step" data-reveal style="--delay: {{ forloop.index0 | times: 80 }}ms">
+          <span class="step__number">{{ step.number }}</span>
+          <h3 class="step__title">{{ step.title }}</h3>
+          <p class="step__text">{{ step.text }}</p>
+          <p class="step__meta">{{ step.meta }}</p>
+        </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- ========================= PLATFORM =========================== -->
+<section class="section section--platform" id="platform">
+  <div class="container">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">{{ t.platform.eyebrow }}</p>
+      <h2 class="section__title">{{ t.platform.title }}</h2>
+      <p class="section__subtitle">{{ t.platform.subtitle }}</p>
+    </header>
+
+    <ul class="grid grid--3 platform">
+      {%- for item in t.platform.items %}
+        <li class="card glass" data-reveal style="--delay: {{ forloop.index0 | times: 60 }}ms">
+          <span class="card__icon" aria-hidden="true">
+            {% include icon.html name=item.icon %}
+          </span>
+          <h3 class="card__title">{{ item.title }}</h3>
+          <p class="card__text">{{ item.text }}</p>
+        </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================= -->
+<section class="section section--faq" id="faq">
+  <div class="container container--narrow">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">{{ t.faq.eyebrow }}</p>
+      <h2 class="section__title">{{ t.faq.title }}</h2>
+    </header>
+
+    <div class="faq" data-reveal>
+      {%- for item in t.faq.items %}
+        <details class="faq__item"{% if forloop.first %} open{% endif %}>
+          <summary class="faq__q">
+            <span>{{ item.q }}</span>
+            <span class="faq__sign" aria-hidden="true"></span>
+          </summary>
+          <div class="faq__a"><p>{{ item.a }}</p></div>
+        </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA ============================= -->
+{% include cta.html %}

@@ -1,0 +1,207 @@
+# Agent catalogue.
+#
+# NOTE: this is draft marketing copy — adjust titles, numbers and wording to
+# match the solutions you actually ship. Add or remove items freely: the
+# landing page renders whatever is listed here.
+
+- id: documents
+  icon: "doc"
+  ru:
+    name: "Агент по документам"
+    tagline: "Документы превращаются в структурированные данные"
+    text: >-
+      Загружает счета, договоры, накладные и ТТН, находит значимые поля,
+      сверяет их с регламентом и сразу заносит результат в учётную систему.
+      Нечитаемые и противоречивые позиции отправляет оператору с пометкой
+      и ссылкой на источник.
+    capabilities:
+      - "Извлечение полей из сканов и PDF"
+      - "Проверка по шаблону и справочникам"
+      - "Обнаружение дубликатов и расхождений"
+      - "Ручная правка с аудитом изменений"
+    stack: ["OCR", "LayoutLM", "RAG", "Structured output"]
+    integrations: ["1С", "PostgreSQL", "S3", "REST API"]
+    outcome: "Документы разбираются за минуты, а не за часы"
+  en:
+    name: "Document agent"
+    tagline: "Documents turned into structured data"
+    text: >-
+      Ingests invoices, contracts, waybills and specs, extracts the fields
+      that matter, checks them against your rules and writes the result
+      straight into the accounting system. Anything unreadable or
+      contradictory goes to an operator with a source reference attached.
+    capabilities:
+      - "Field extraction from scans and PDFs"
+      - "Validation against templates and reference data"
+      - "Duplicate and mismatch detection"
+      - "Manual correction with a full audit trail"
+    stack: ["OCR", "LayoutLM", "RAG", "Structured output"]
+    integrations: ["1C", "PostgreSQL", "S3", "REST API"]
+    outcome: "Documents are processed in minutes instead of hours"
+
+- id: support
+  icon: "chat"
+  ru:
+    name: "Агент поддержки"
+    tagline: "Первую линию закрывает агент, а не человек"
+    text: >-
+      Отвечает в почте, чате и мессенджерах, опираясь на базу знаний и историю
+      обращений, сам проверяет статус заказа в системах и закрывает типовые
+      обращения. Сложные и эмоциональные — передаёт оператору вместе с
+      собранным контекстом.
+    capabilities:
+      - "Ответы по базе знаний и регламентам"
+      - "Проверка статуса заказа в учётной системе"
+      - "Квалификация и маршрутизация обращения"
+      - "Подготовка черновика ответа оператору"
+    stack: ["LLM + RAG", "Tool calling", "Intent routing"]
+    integrations: ["CRM", "Мессенджеры", "Почта", "1С"]
+    outcome: "Время первого ответа — минуты, доля автоответов — до 60%"
+  en:
+    name: "Support agent"
+    tagline: "The agent runs the first line, not a person"
+    text: >-
+      Replies in email, chat and messengers using your knowledge base and
+      ticket history, checks order status in your systems and closes routine
+      requests on its own. Complex or emotional cases are handed to a human
+      together with the collected context.
+    capabilities:
+      - "Answers grounded in your docs and policies"
+      - "Order status lookup in your systems"
+      - "Intent classification and routing"
+      - "Drafting the reply for an operator"
+    stack: ["LLM + RAG", "Tool calling", "Intent routing"]
+    integrations: ["CRM", "Messengers", "Email", "1C"]
+    outcome: "First response in minutes, up to 60% of requests automated"
+
+- id: sales
+  icon: "trend"
+  ru:
+    name: "Агент продаж"
+    tagline: "Лиды обрабатываются, а не теряются"
+    text: >-
+      Разбирает входящие обращения, обогащает их данными из CRM, оценивает
+      приоритет и срок, готовит коммерческое предложение и персональное
+      письмо по шаблону компании, а затем ведёт сделку до следующего шага.
+    capabilities:
+      - "Квалификация и скоринг лидов"
+      - "Подготовка КП и персональных писем"
+      - "Обогащение данных из открытых источников"
+      - "Напоминания и автоследования в CRM"
+    stack: ["LLM", "Scoring", "CRM automation"]
+    integrations: ["CRM", "Email", "Asterisk", "PostgreSQL"]
+    outcome: "Меньше потерянных лидов, быстрее первый контакт"
+  en:
+    name: "Sales agent"
+    tagline: "Leads get handled instead of lost"
+    text: >-
+      Triages inbound requests, enriches them with CRM data, scores priority
+      and timing, drafts the proposal and a personalised follow-up using your
+      templates, then keeps the deal moving to the next step.
+    capabilities:
+      - "Lead qualification and scoring"
+      - "Proposal and personalised email drafting"
+      - "Data enrichment from open sources"
+      - "Reminders and follow-ups inside CRM"
+    stack: ["LLM", "Scoring", "CRM automation"]
+    integrations: ["CRM", "Email", "Asterisk", "PostgreSQL"]
+    outcome: "Fewer lost leads and a faster first contact"
+
+- id: planner
+  icon: "chart"
+  ru:
+    name: "Агент-планировщик"
+    tagline: "План по сменам и ресурсам, который пересчитывается сам"
+    text: >-
+      Строит график с учётом ограничений, доступности людей и оборудования,
+      каждый раз пересчитывает план при изменениях и показывает, где появятся
+      недоборы, переработки и срывы сроков — до того, как они случатся.
+    capabilities:
+      - "Планирование смен и загрузки"
+      - "Что-если анализ по ограничениям"
+      - "Прогноз переработок и недоборов"
+      - "Обновление плана при изменениях"
+    stack: ["OR-Tools", "LLM", "Forecasting"]
+    integrations: ["1С", "PostgreSQL", "Excel", "REST API"]
+    outcome: "План обновляется за секунды вместо ручной пересборки"
+  en:
+    name: "Planning agent"
+    tagline: "Shift and capacity plans that recalculate themselves"
+    text: >-
+      Builds schedules against constraints, staff availability and equipment,
+      recalculates the plan whenever anything changes and shows where you will
+      hit short-staffing, overtime and missed deadlines — before it happens.
+    capabilities:
+      - "Shift and capacity scheduling"
+      - "What-if analysis over constraints"
+      - "Overtime and shortage forecasting"
+      - "Plan refresh on every change"
+    stack: ["OR-Tools", "LLM", "Forecasting"]
+    integrations: ["1C", "PostgreSQL", "Excel", "REST API"]
+    outcome: "Plans update in seconds instead of a manual rebuild"
+
+- id: quality
+  icon: "shield"
+  ru:
+    name: "Агент контроля"
+    tagline: "Проверка до отправки, а не после жалобы"
+    text: >-
+      Сверяет документы и ответы с регламентом и SLA, ловит несоответствия,
+      тон и запрещённые формулировки, проверяет комплектность и формирует
+      отчёт о рисках до того, как клиент увидит результат.
+    capabilities:
+      - "Проверка по регламентам и SLA"
+      - "Контроль комплектности документов"
+      - "Тональность и редактура ответов"
+      - "Отчёт о рисках и отклонениях"
+    stack: ["LLM", "RAG", "Rules engine"]
+    integrations: ["1С", "CRM", "PostgreSQL"]
+    outcome: "Ошибки ловятся до клиента, а не после"
+  en:
+    name: "Quality agent"
+    tagline: "Check before sending, not after the complaint"
+    text: >-
+      Compares documents and replies against your policies and SLAs, catches
+      inconsistencies, tone and forbidden phrasing, verifies completeness and
+      produces a risk report before the customer sees the result.
+    capabilities:
+      - "Policy and SLA compliance checks"
+      - "Document completeness validation"
+      - "Tone and copy-editing of replies"
+      - "Risk and deviation reporting"
+    stack: ["LLM", "RAG", "Rules engine"]
+    integrations: ["1C", "CRM", "PostgreSQL"]
+    outcome: "Errors are caught before the customer, not after"
+
+- id: developer
+  icon: "code"
+  ru:
+    name: "Агент разработчика"
+    tagline: "Ревью, миграции и документация по вашему коду"
+    text: >-
+      Разбирает репозиторий, проверяет изменения на соответствие вашим
+      соглашениям, готовит миграции схемы и черновики тестов по описанным
+      сценариям, а затем ведёт поиск по кодовой базе и по документации проекта.
+    capabilities:
+      - "Ревью изменений и поиск регрессий"
+      - "Миграции схемы и черновики тестов"
+      - "Поиск по репозиторию и документации"
+      - "Обновление доков по изменениям"
+    stack: ["LLM + code context", "AST", "CI/CD"]
+    integrations: ["Git", "GitLab", "CI", "Confluence"]
+    outcome: "Ревью и онбординг в проекте занимают меньше времени"
+  en:
+    name: "Developer agent"
+    tagline: "Reviews, migrations and docs on your own code"
+    text: >-
+      Reads the repository, checks changes against your conventions, prepares
+      schema migrations and test drafts from written scenarios, then answers
+      questions across the codebase and project documentation.
+    capabilities:
+      - "Change review and regression search"
+      - "Schema migrations and test drafts"
+      - "Search across repo and documentation"
+      - "Doc updates driven by code changes"
+    stack: ["LLM + code context", "AST", "CI/CD"]
+    integrations: ["Git", "GitLab", "CI", "Confluence"]
+    outcome: "Faster reviews and faster onboarding into the project"

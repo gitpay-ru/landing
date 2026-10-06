@@ -1,0 +1,91 @@
+// ---------------------------------------------------------------------------
+// Design tokens
+// ---------------------------------------------------------------------------
+
+// Surfaces
+$bg:            #07090f;
+$bg-elevated:   #0b101c;
+$surface:       rgba(255, 255, 255, 0.035);
+$surface-hover: rgba(255, 255, 255, 0.06);
+$border:        rgba(148, 163, 184, 0.16);
+$border-strong: rgba(148, 163, 184, 0.28);
+
+// Text
+$text:      #e8eef8;
+$text-soft: #b6c2d6;
+$text-mute: #8b98ad;
+
+// Brand
+$teal:   #5eead4;
+$violet: #a78bfa;
+$sky:    #38bdf8;
+$accent: $teal;
+
+// Shape
+$radius-lg: 20px;
+$radius:    14px;
+$radius-sm: 10px;
+
+// Layout
+$container:      1200px;
+$container-narrow: 780px;
+$header-height: 76px;
+
+// Type
+$font-sans: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+$font-mono: "JetBrains Mono", "SFMono-Regular", "Menlo", "Consolas",
+  "Liberation Mono", monospace;
+
+// Motion
+$ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+// Breakpoints
+$bp-sm: 600px;
+$bp-md: 820px;
+$bp-lg: 1060px;
+
+@mixin from($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin until($width) {
+  @media (max-width: ($width - 1px)) {
+    @content;
+  }
+}
+
+@mixin container($max: $container) {
+  width: 100%;
+  max-width: $max;
+  margin-inline: auto;
+  padding-inline: 24px;
+
+  @include until($bp-sm) {
+    padding-inline: 18px;
+  }
+}
+
+@mixin glass {
+  background: $surface;
+  border: 1px solid $border;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@mixin gradient-text($from: $teal, $to: $violet) {
+  background: linear-gradient(105deg, $from 0%, $sky 45%, $to 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,50 @@
+---
+layout: default
+body_class: page page--contacts
+lang: ru
+lang_url: /en/contacts/
+contacts_url: /contacts/
+title: "Контакты"
+description: "Почта и адрес офиса Гит Пэй Рус в Санкт-Петербурге."
+permalink: /contacts/
+---
+
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+<section class="section section--top">
+  <div class="container container--narrow">
+    <header class="section__head" data-reveal>
+      <p class="eyebrow">{{ t.contacts.eyebrow }}</p>
+      <h1 class="section__title">{{ t.contacts.title }}</h1>
+      <p class="section__subtitle">{{ t.contacts.subtitle }}</p>
+    </header>
+
+    <div class="contact-cards" data-reveal>
+      <a class="card card--contact glass" href="mailto:{{ site.email }}">
+        <span class="card__icon card__icon--lg" aria-hidden="true">{% include icon.html name="mail" %}</span>
+        <h2 class="card__title card__title--lg">{{ t.contacts.email_label }}</h2>
+        <p class="card__text">{{ site.email }}</p>
+      </a>
+
+      <div class="card card--contact glass">
+        <span class="card__icon card__icon--lg" aria-hidden="true">{% include icon.html name="pin" %}</span>
+        <h2 class="card__title card__title--lg">{{ t.contacts.address_label }}</h2>
+        <p class="card__text">
+          {{ site.address.street }}<br>
+          {{ site.address.city }}, {{ site.address.zip }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta.html %}
+
+<section class="section section--muted" id="privacy">
+  <div class="container container--narrow">
+    <div class="prose" data-reveal>
+      <h2>{{ t.footer_legal.title }}</h2>
+      <p>{{ t.footer_legal.text }}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- comment -%}
+  The CTA anchor only exists on the landing page; everywhere else it goes to
+  the contacts page.
+{%- endcomment -%}
+{%- if page.layout == "home" -%}
+  {%- assign contact_href = "/#contact" -%}
+{%- else -%}
+  {%- assign contact_href = page.contacts_url | default: "/contacts/" -%}
+{%- endif -%}
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="30" height="30" rx="9" stroke="url(#brandGrad)" stroke-width="2"/>
+          <circle cx="16" cy="11" r="3.2" fill="#5eead4"/>
+          <circle cx="9.5" cy="22" r="3.2" fill="#a78bfa"/>
+          <circle cx="22.5" cy="22" r="3.2" fill="#38bdf8"/>
+          <path d="M16 14.2 10.4 19M16 14.2 21.6 19M12.7 22h6.6" stroke="#c7d2fe" stroke-width="1.4" stroke-linecap="round" opacity=".75"/>
+          <defs>
+            <linearGradient id="brandGrad" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#5eead4"/>
+              <stop offset="1" stop-color="#a78bfa"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="brand__text">
+        <span class="brand__name">{{ site.title_short }}</span>
+        <span class="brand__sub">{{ site.tagline[lang] }}</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="{{ t.nav.menu }}">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="{{ '/' | relative_url }}#agents">{{ t.nav.agents }}</a></li>
+        <li><a class="nav__link" href="{{ '/' | relative_url }}#approach">{{ t.nav.approach }}</a></li>
+        <li><a class="nav__link" href="{{ '/' | relative_url }}#platform">{{ t.nav.platform }}</a></li>
+        <li><a class="nav__link" href="{{ '/' | relative_url }}#faq">{{ t.nav.faq }}</a></li>
+        <li><a class="nav__link{% if page.url contains '/contacts' %} is-active{% endif %}" href="{{ page.contacts_url | default: '/contacts/' | relative_url }}">{{ t.nav.contacts }}</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <div class="lang" role="group" aria-label="{{ t.nav.lang_label }}">
+          <a class="lang__item{% unless page.lang == 'en' %} is-active{% endunless %}"
+             href="{% if page.lang == 'en' %}{{ '/' | relative_url }}{% else %}{{ page.url | relative_url }}{% endif %}"
+             lang="ru" hreflang="ru"{% unless page.lang == 'en' %} aria-current="true"{% endunless %}>RU</a>
+          <a class="lang__item{% if page.lang == 'en' %} is-active{% endif %}"
+             href="{% if page.lang == 'en' %}{{ page.url | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}"
+             lang="en" hreflang="en"{% if page.lang == 'en' %} aria-current="true"{% endif %}>EN</a>
+        </div>
+        <a class="btn btn--sm btn--primary nav__cta" href="{{ contact_href | relative_url }}">{{ t.nav.cta }}</a>
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="sr-only">{{ t.nav.menu }}</span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

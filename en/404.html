@@ -1,12 +1,12 @@
 ---
 layout: default
 body_class: page page--404
-lang: ru
-lang_url: /en/
-contacts_url: /contacts/
+lang: en
+lang_url: /
+contacts_url: /en/contacts/
 title: "404"
-description: "Страница не найдена."
-permalink: /404.html
+description: "Page not found."
+permalink: /en/404.html
 sitemap: false
 ---
 
@@ -17,6 +17,6 @@ sitemap: false
     <p class="notfound__code" aria-hidden="true">404</p>
     <h1 class="section__title">{{ t.page_meta.notfound_description }}</h1>
     <p class="section__subtitle">{{ t.page_meta.notfound_text }}</p>
-    <a class="btn btn--primary" href="{{ '/' | relative_url }}">{{ t.page_meta.back_home }}</a>
+    <a class="btn btn--primary" href="{{ '/en/' | relative_url }}">{{ t.page_meta.back_home }}</a>
   </div>
 </section>

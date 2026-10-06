@@ -1,0 +1,28 @@
+{%- comment -%}
+  Self-contained: page content is rendered before any layout, so an include may
+  be used from a page body where `t` is not yet in scope.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+<section class="section section--cta" id="contact">
+  <div class="container">
+    <div class="cta glass" data-reveal>
+      <div class="cta__glow" aria-hidden="true"></div>
+      <div class="cta__content">
+        <h2 class="cta__title">{{ t.cta.title }}</h2>
+        <p class="cta__text">{{ t.cta.text }}</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="mailto:{{ site.email }}?subject={{ t.hero.eyebrow | uri_escape }}">{{ t.cta.primary }}</a>
+          <a class="btn btn--ghost" href="{{ page.contacts_url | default: '/contacts/' | relative_url }}">{{ t.cta.secondary }}</a>
+        </div>
+        <p class="cta__note">{{ t.cta.response }}</p>
+      </div>
+      <div class="cta__aside">
+        <p class="cta__aside-label">{{ t.contacts.email_label }}</p>
+        <a class="cta__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <p class="cta__aside-label">{{ t.contacts.address_label }}</p>
+        <p class="cta__address">{{ site.address.street }}<br>{{ site.address.city }}, {{ site.address.zip }}</p>
+      </div>
+    </div>
+  </div>
+</section>

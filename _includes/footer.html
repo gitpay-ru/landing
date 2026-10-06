@@ -1,0 +1,33 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="brand brand--footer" href="{{ '/' | relative_url }}">
+        <span class="brand__name">{{ site.title_short }}</span>
+      </a>
+      <p class="site-footer__tagline">{{ t.footer.tagline }}</p>
+      <p class="site-footer__copy">{{ t.contacts.note }}</p>
+    </div>
+
+    <nav class="site-footer__col" aria-label="{{ t.footer.nav }}">
+      <h2 class="site-footer__title">{{ t.footer.nav }}</h2>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}#agents">{{ t.nav.agents }}</a></li>
+        <li><a href="{{ '/' | relative_url }}#approach">{{ t.nav.approach }}</a></li>
+        <li><a href="{{ '/' | relative_url }}#platform">{{ t.nav.platform }}</a></li>
+        <li><a href="{{ '/' | relative_url }}#faq">{{ t.nav.faq }}</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__title">{{ t.footer.contact }}</h2>
+      <ul>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><a href="{{ page.contacts_url | default: '/contacts/' | relative_url }}">{{ site.address.city }}</a></li>
+      </ul>
+      <div class="lang lang--footer" role="group" aria-label="{{ t.nav.lang_label }}">
+        <a class="lang__item{% unless page.lang == 'en' %} is-active{% endunless %}" href="{% if page.lang == 'en' %}{{ '/' | relative_url }}{% else %}{{ page.url | relative_url }}{% endif %}" lang="ru" hreflang="ru">RU</a>
+        <a class="lang__item{% if page.lang == 'en' %} is-active{% endif %}" href="{% if page.lang == 'en' %}{{ page.url | relative_url }}{% else %}{{ '/en/' | relative_url }}{% endif %}" lang="en" hreflang="en">EN</a>
+      </div>
+    </div>
+  </div>
+</footer>

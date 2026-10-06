@@ -1,0 +1,179 @@
+meta:
+  title: "GitPay RU — AI agents for business"
+  description: >-
+    We design and deploy AI agents for real business processes: document
+    processing, support, sales, planning, quality control and engineering.
+    RAG, fine-tuning, evals and MLOps — from prototype to production.
+
+nav:
+  home: "Home"
+  agents: "Agents"
+  approach: "Approach"
+  platform: "Platform"
+  faq: "FAQ"
+  contacts: "Contacts"
+  cta: "Discuss a task"
+  menu: "Menu"
+  close: "Close"
+  lang_label: "Language"
+  skip: "Skip to content"
+
+hero:
+  eyebrow: "AI-native engineering"
+  title_1: "AI agents"
+  title_2: "for your workflows"
+  subtitle: >-
+    We build agents that work with your data, systems and regulations: read
+    documents, answer customers, plan resources and guard quality — with
+    measurable results and human escalation.
+  primary: "Discuss a task"
+  secondary: "Explore the agents"
+  hint: "From kickoff to pilot in 4–8 weeks. No rip-and-replace."
+
+hero_cards:
+  - title: "Your data stays yours"
+    text: "Agents run inside your perimeter: on-premise, in your cloud, or behind an API."
+  - title: "Humans in the loop"
+    text: "The agent does not act on uncertain decisions on its own — it escalates to an operator."
+  - title: "Measured impact"
+    text: "Every pilot starts with metrics: time, cost, share of automated work."
+
+stats:
+  - value: "6+"
+    label: "ready-made agent solutions in the kit"
+  - value: "4–8"
+    label: "weeks from kickoff to pilot"
+  - value: "100%"
+    label: "of solutions can be fine-tuned on your data"
+  - value: "24/7"
+    label: "agents work without weekends"
+
+problems:
+  eyebrow: "The problem"
+  title: "Where teams usually get stuck"
+  subtitle: "We start with one narrow, repetitive and expensive step in your process."
+  items:
+    - icon: "clock"
+      title: "Manual work eats time"
+      text: "Operators re-read the same documents and re-key the same data by hand."
+    - icon: "chat"
+      title: "Answers get stuck in a queue"
+      text: "Emails, chats and tickets wait hours, while knowledge lives in people's heads."
+    - icon: "search"
+      title: "Knowledge is hard to find"
+      text: "Policies, wikis and archives are scattered — finding one answer takes days."
+    - icon: "shield"
+      title: "Control comes too late"
+      text: "Customers and auditors find the mistakes, not the system, before it is too late."
+    - icon: "chart"
+      title: "Plans live in spreadsheets"
+      text: "Resources, shifts and deadlines are planned manually and ignore changes."
+    - icon: "code"
+      title: "Engineering slows down"
+      text: "Reviews, migrations and docs consume the time of your most expensive engineers."
+
+agents:
+  eyebrow: "Solutions"
+  title: "Agents built for your processes"
+  subtitle: >-
+    Ready-made solutions from our kit, adapted to your regulations and systems —
+    or an agent built from scratch for a unique process.
+  all: "Details"
+  open: "Agent details"
+  stack_label: "Stack"
+  integrations_label: "Integrations"
+  outcome_label: "Outcome"
+
+approach:
+  eyebrow: "Approach"
+  title: "How we work"
+  subtitle: "A transparent process with a clear result at every stage."
+  steps:
+    - number: "01"
+      title: "Discovery"
+      text: "We map the process, the data and the metrics, then pick the step with the highest impact."
+      meta: "1–2 weeks"
+    - number: "02"
+      title: "Prototype"
+      text: "We build the agent on your own examples: real data, real cases, an honest quality report."
+      meta: "2–4 weeks"
+    - number: "03"
+      title: "Pilot"
+      text: "We run it in one team next to your people and compare metrics and cost."
+      meta: "4–8 weeks"
+    - number: "04"
+      title: "Run & improve"
+      text: "We integrate it with your systems, add monitoring, evals and retraining on fresh data."
+      meta: "ongoing"
+
+platform:
+  eyebrow: "Platform"
+  title: "What is inside the solution"
+  subtitle: "One data layer, a model zoo, quality control and observability."
+  items:
+    - icon: "layers"
+      title: "Data & knowledge"
+      text: "Connectors to databases, data marts, mail, messengers and file storages. RAG over your knowledge bases."
+    - icon: "models"
+      title: "Models"
+      text: "Commercial API models, open-source models and domain fine-tuning. We pick the model per task and budget."
+    - icon: "tools"
+      title: "Tools & actions"
+      text: "The agent does more than answer: it calls your API, creates tasks, updates CRM and fills documents."
+    - icon: "gauge"
+      title: "Evals & quality"
+      text: "Test sets built on your data, with quality tracked whenever a model is updated."
+    - icon: "eye"
+      title: "Observability"
+      text: "Conversation logs, step-by-step traces, cost per request and alerts on degradation."
+    - icon: "lock"
+      title: "Security"
+      text: "Isolation, access logging, personal-data masking and on-premise deployment."
+
+faq:
+  eyebrow: "FAQ"
+  title: "Frequently asked questions"
+  items:
+    - q: "How does a project start?"
+      a: "With discovery: we map the process, the data and the target metric. If the task does not fit AI, we say so at that very first stage."
+    - q: "Do we have to replace our current systems?"
+      a: "No. Agents sit on top of your existing landscape: 1C, CRM, mail, messengers, repositories. Deep integration is optional."
+    - q: "Where does the solution run?"
+      a: "Your server or cloud, our managed setup, or an API integration. For sensitive data — on-premise with nothing leaving your network."
+    - q: "How is quality measured?"
+      a: "Before the pilot we assemble evals from your real cases and record accuracy, speed and cost. Then we keep watching those metrics in production."
+    - q: "Who is responsible for the agent's output?"
+      a: "The architecture keeps a human in the loop: autonomy levels, confidence thresholds and mandatory escalation to an operator."
+    - q: "How much does it cost?"
+      a: "We estimate the pilot after discovery: data volume, integrations, deployment requirements. We calculate the total cost of ownership with you — no hidden fees."
+
+cta:
+  title: "Tell us about the task — we will propose a pilot"
+  text: "Describe the process you want to automate. You get back an impact estimate, a timeline and a pilot plan."
+  primary: "Email us"
+  secondary: "Contact us"
+  response: "We reply within one business day."
+
+contacts:
+  eyebrow: "Contacts"
+  title: "Get in touch"
+  subtitle: "Tell us about the process you want to improve — we will dig in and propose a pilot."
+  email_label: "Email"
+  address_label: "Office"
+  note: "All rights reserved."
+
+footer:
+  tagline: "AI agents for business processes."
+  nav: "Sections"
+  contact: "Contact"
+  legal: "Privacy policy"
+
+footer_legal:
+  title: "Privacy policy"
+  text: "We process only the data you send voluntarily and use it solely to answer your request. It is never shared with third parties and never used to train models."
+
+page_meta:
+  contacts_description: "GitPay RU contact details: email and office address in Saint Petersburg."
+  notfound_description: "Page not found"
+  notfound_text: "The link may be outdated or the address may be mistyped."
+  back_home: "Back to home"
